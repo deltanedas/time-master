@@ -1,0 +1,10 @@
+{
+	"category": "effect",
+	"health": 400,
+	"size": 3,
+	"update": true,
+	"solid": true,
+	"configurable": true,
+	"alwaysUnlocked": true,
+	"buildVisibility": "sandboxOnly"
+}
