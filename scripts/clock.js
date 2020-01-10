@@ -1,5 +1,3 @@
-const region = Core.atlas.find("time-master-clock");
-
 const clock = extendContent(Block, "clock", {
 	buildConfiguration: function(tile, table){
 		table.addImageButton(Icon.arrowLeftSmall, Styles.clearTransi, run(() => {
@@ -20,7 +18,7 @@ const clock = extendContent(Block, "clock", {
 	},
 
 	draw: function(tile){
-		Draw.rect(region, tile.drawx(), tile.drawy());
+		Draw.rect(Core.atlas.find("time-master-clock", tile.drawx(), tile.drawy());
 		Lines.stroke(2, Color.scarlet);
 		Lines.lineAngle(tile.drawx(), tile.drawy(), Vars.state.rules.ambientLight.a * 720, 6);
 		Draw.color();
