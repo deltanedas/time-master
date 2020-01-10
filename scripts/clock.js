@@ -14,11 +14,18 @@ const clock = extendContent(Block, "clock", {
 	},
 
 	update: function(tile){
-		Vars.state.rules.ambientLight.a = Mathf.lerp(Vars.state.rules.ambientLight.a, this.hour, 0.1);
+		var tmp = Mathf.lerp(Vars.state.rules.ambientLight.a, this.hour, 0.1);
+		if(tmp > 1){
+			tmp = 1;
+		}else if(tmp < 0){
+			tmp = 0;
+		}
+		this.hour = tmp;
+		Vars.state.rules.ambientLight.a = tmp;
 	},
 
 	draw: function(tile){
-		Draw.rect(Core.atlas.find("time-master-clock", tile.drawx(), tile.drawy());
+		Draw.rect(Core.atlas.find("time-master-clock"), tile.drawx(), tile.drawy());
 		Lines.stroke(2, Color.scarlet);
 		Lines.lineAngle(tile.drawx(), tile.drawy(), Vars.state.rules.ambientLight.a * 720, 6);
 		Draw.color();
