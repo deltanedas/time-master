@@ -1,9 +1,9 @@
 const clock = extendContent(Block, "clock", {
 	buildConfiguration: function(tile, table){
-		table.addImageButton(Icon.arrowLeftSmall, Styles.clearTransi, run(() => {
+		table.addImageButton(Icon.leftSmall, Styles.clearTransi, run(() => {
 			tile.configure(-1);
 		})).size(35);
-		table.addImageButton(Icon.arrowRightSmall, Styles.clearTransi, run(() => {
+		table.addImageButton(Icon.rightSmall, Styles.clearTransi, run(() => {
 			tile.configure(1);
 		})).size(35);
 	},
